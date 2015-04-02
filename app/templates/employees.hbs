@@ -1,0 +1,11 @@
+<div>
+  {{#unless model}}
+
+    <h2>Employees will appear here</h2>
+    People added to this list will be able to submit their working hours.
+
+    {{#link-to 'employees.new'}}Add employee{{/link-to}}
+  {{else}}
+    {{outlet}}
+  {{/unless}}
+</div>

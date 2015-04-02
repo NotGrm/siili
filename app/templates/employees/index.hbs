@@ -1,0 +1,30 @@
+<div>
+  {{#link-to 'employees.new'}}Add employee{{/link-to}}
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Role</th>
+      <th>Hourly plan</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each model as |employee|}}
+    <tr>
+      <td>{{employee.fullName}}</td>
+      <td>{{employee.role}}</td>
+      <td>{{employee.hourlyPlan}}</td>
+      <td>
+        <span class="delete__button delete__button--{{employee.id}}" {{action 'toggleOnConfirm' employee}}>Delete</span>
+        <div class="delete__confirm delete__confirm--{{employee.id}}">
+          <button {{action 'deleteEmployee' employee}}>Remove</button>
+          <button {{action 'toggleOffConfirm' employee}}>Cancel</button>
+        </div>
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>

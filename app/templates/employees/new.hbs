@@ -1,0 +1,28 @@
+<h2>Add people</h2>
+
+{{#with model as |employee|}}
+<div>
+  <label>First Name</label>
+  {{input value=employee.firstName autofocus=true}}
+</div>
+<div>
+  <label>Last Name</label>
+  {{input value=employee.lastName}}
+</div>
+<div>
+  <label>Email</label>
+  {{input value=employee.email type='email' placeholder='email@example.com'}}
+</div>
+<div>
+  <label>Role</label>
+  {{#radio-button value="employee" groupValue=employee.role}}Employee{{/radio-button}}
+  {{#radio-button value="hr" groupValue=employee.role}}HR{{/radio-button}}
+  {{#radio-button value="administrator" groupValue=employee.role}}Administrator{{/radio-button}}
+</div>
+<div>
+  <label>Hourly plan</label>
+  {{input value=employee.hourlyPlan type='number'}}
+</div>
+{{/with}}
+<button {{action 'submit'}}>Add {{model.fullName}} to employee list</button>
+{{#link-to 'employees'}}Cancel{{/link-to}}
