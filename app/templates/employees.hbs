@@ -1,11 +1,9 @@
-<div>
-  {{#unless model}}
-
+{{#unless model}}
+  <div class="jumbotron">
     <h2>Employees will appear here</h2>
-    People added to this list will be able to submit their working hours.
-
-    {{#link-to 'employees.new'}}Add employee{{/link-to}}
-  {{else}}
-    {{outlet}}
-  {{/unless}}
-</div>
+    <p>People added to this list will be able to submit their working hours.</p>
+    <p>{{#link-to 'employees.new' class='btn btn-default'}}Add employee{{/link-to}}</p>
+  </div>
+{{else}}
+  {{outlet}}
+{{/unless}}
