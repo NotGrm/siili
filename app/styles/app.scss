@@ -3,9 +3,52 @@
 }
 
 .delete__confirm {
-  visibility: hidden;
+  display: none;
 }
 
 .content {
   padding: 10px;
+}
+
+.table-head {
+  &__col {
+    &--centered {
+      text-align: center;
+    }
+  }
+}
+
+.table-row {
+  height: 47px;
+
+  & > td {
+    vertical-align: middle!important;
+  }
+
+  &:hover {
+    .row__actions {
+      visibility: visible;
+    }
+  }
+
+  &__col {
+    &--actions {
+      text-align: right;
+    }
+
+    &--centered {
+      text-align: center;
+    }
+  }
+}
+
+.subnav {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  height: 50px;
+}
+
+.row__actions {
+  color: #bfbfbf;
+  visibility: hidden;
 }
