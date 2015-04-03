@@ -1,5 +1,14 @@
-<h2 id="title">Welcome to Siili</h2>
+<div class="container">
+  <h2 id="title">Welcome to Siili</h2>
 
-{{#link-to 'employees'}}Employees{{/link-to}}
+  <ul class="nav nav-tabs">
+    {{#active-link}}
+    {{#link-to 'employees'}}
+      {{fa-icon 'star'}}
+      Employees
+    {{/link-to}}
+    {{/active-link}}
+  </ul>
 
-{{outlet}}
+  {{outlet}}
+</div>
