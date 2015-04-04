@@ -22,7 +22,7 @@
 </table>
 
 <div class="well">
-  {{#unless isAdding}}
+  {{#liquid-unless isAdding class="actions"}}
     <button class='btn btn-default' {{action 'showForm'}}>Add employee</button>
   {{else}}
     <form {{action 'addEmployee' on='submit'}}>
@@ -64,5 +64,5 @@
       <button class="btn btn-primary" type="submit">Add to employee list</button>
       <button class='btn btn-link' {{action 'hideForm'}}>Cancel</button>
     </form>
-  {{/unless}}
+  {{/liquid-unless}}
 </div>
