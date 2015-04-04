@@ -1,7 +1,3 @@
-<div class="well well-sm">
-  {{#link-to 'employees.new' class='btn btn-primary'}}Add employee{{/link-to}}
-</div>
-
 <table class="table">
   <thead>
     <tr class="table-head">
@@ -24,3 +20,49 @@
   {{/each}}
   </tbody>
 </table>
+
+<div class="well">
+  {{#unless isAdding}}
+    <button class='btn btn-default' {{action 'showForm'}}>Add employee</button>
+  {{else}}
+    <form {{action 'addEmployee' on='submit'}}>
+      <div class="row">
+
+        <div class="form-group col-sm-12">
+          <label class="control-label">Role</label>
+          <div>
+            <label class="radio-inline">
+              {{#radio-button value="employee" groupValue=role}}Employee{{/radio-button}}
+            </label>
+            <label class="radio-inline">
+              {{#radio-button value="hr" groupValue=role}}HR{{/radio-button}}
+            </label>
+            <label class="radio-inline">
+              {{#radio-button value="administrator" groupValue=role}}Administrator{{/radio-button}}
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <label for="firstName">First Name</label>
+          {{input id='firstName' class='form-control' value=firstName autofocus=true}}
+        </div>
+        <div class="form-group col-sm-6">
+          <label for="lastName">Last Name</label>
+          {{input id='lastName' class='form-control' value=lastName}}
+        </div>
+        <div class="form-group col-sm-9">
+          <label for="email">Email</label>
+          {{input id='email' class='form-control' value=email type='email' placeholder='email@example.com'}}
+        </div>
+        <div class="form-group col-sm-3">
+          <label for="hourlyPlan">Hourly plan</label>
+          {{input id='hourlyPlan' class='form-control' value=hourlyPlan type='number'}}
+        </div>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Add to employee list</button>
+      <button class='btn btn-link' {{action 'hideForm'}}>Cancel</button>
+    </form>
+  {{/unless}}
+</div>
