@@ -17,7 +17,7 @@ Employee.reopenClass({
     {
       id: 1,
       firstName: 'christophe',
-      lastName: 'bartell',
+      lastName: 'greenholt',
       email: 'christophe.bartell@example.com',
       role: 'administrator',
       hourlyPlan: 35
@@ -25,7 +25,7 @@ Employee.reopenClass({
     {
       id: 2,
       firstName: 'kirsten',
-      lastName: 'greenholt',
+      lastName: 'lockman',
       email: 'kirsten.greenholt@example.com',
       role: 'hr',
       hourlyPlan: 35
@@ -33,7 +33,7 @@ Employee.reopenClass({
     {
       id: 3,
       firstName: 'anibal',
-      lastName: 'lockman',
+      lastName: 'bartell',
       email: 'anibal.lockman@6cure.com',
       role: 'employee',
       hourlyPlan: 35
