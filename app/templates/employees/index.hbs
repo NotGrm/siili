@@ -9,14 +9,7 @@
   </thead>
   <tbody>
   {{#each arrangedContent as |employee|}}
-    <tr class="table-row">
-      <td>{{employee.fullName}}</td>
-      <td>{{employee.role}}</td>
-      <td class="table-row__col--centered">{{employee.hourlyPlan}}H</td>
-      <td class="table-row__col--actions">
-        {{row-buttons param=employee remove='deleteEmployee'}}
-      </td>
-    </tr>
+    {{employee-row model=employee editModel='updateEmployee' deleteModel='deleteEmployee'}}
   {{/each}}
   </tbody>
 </table>

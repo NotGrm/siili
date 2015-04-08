@@ -1,0 +1,23 @@
+{{#with model as |employee|}}
+  {{#if isEditing}}
+    <td>{{employee.fullName}}</td>
+    <td>
+      {{view 'select' class='form-control' content=roles value=employee.role}}
+    </td>
+    <td>
+      <div class="input-group">
+        {{input class='form-control input-sm' value=employee.hourlyPlan type='number'}}
+        <span class="input-group-addon" id="basic-addon2">H</span>
+      </div>
+    </td>
+    <td class="table-row__col--actions">
+      <button class="btn btn-sm btn-primary" {{action 'editModel'}}>Submit</button>
+      <button class="btn btn-sm btn-link" {{action 'hideEdit'}}>Cancel</button>
+    </td>
+  {{else}}
+    <td>{{employee.fullName}}</td>
+    <td>{{employee.role}}</td>
+    <td class="table-row__col--centered">{{employee.hourlyPlan}}H</td>
+    {{row-buttons param=employee edit='showEdit' remove='deleteModel'}}
+  {{/if}}
+{{/with}}

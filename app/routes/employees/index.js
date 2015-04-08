@@ -24,6 +24,9 @@ export default Ember.Route.extend({
             role: ''
           });
         }.bind(this));
+    },
+    updateEmployee: function(employee) {
+      employee.save();
     }
   }
 });

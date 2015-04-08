@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  tagName: 'td',
+  classNames: ['table-row__col--actions'],
   isShowingConfirmation: false,
 
   mouseLeave: function(event, view) {
@@ -14,7 +16,10 @@ export default Ember.Component.extend({
     hideConfirmation: function() {
       this.toggleProperty('isShowingConfirmation');
     },
-    confirmRemove: function() {
+    editRow: function() {
+      this.sendAction('edit', this.get('param'));
+    },
+    deleteRow: function() {
       this.toggleProperty('isShowingConfirmation');
       this.sendAction('remove', this.get('param'));
     },
